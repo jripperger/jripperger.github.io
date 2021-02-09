@@ -16,7 +16,7 @@
         }
 
         if (number.length > 16) {
-            alert("Card number must be shorter than 16 digits.");
+            alert("Card number must be no more than 16 digits.");
             return false;
         }
 
@@ -25,12 +25,12 @@
         var i = number.length - 1;
         var subtract = 0;
 
-        while (i > 0) {
+        while (i >= 0) {
             var nString = number.charAt(i);
             var nInt = parseInt(nString);
 
             if (subtract % 2 != 0) {
-                nInt = 2*nInt;
+                nInt = nInt * 2;
             }
             
             cardTotal = cardTotal + nInt;
