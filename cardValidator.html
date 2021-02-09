@@ -32,8 +32,9 @@
             if (subtract % 2 == 1) {
                 nInt = nInt * 2;
                 if (nInt >= 10) {
-                    nIntOne = parseInt(nInt.charAt(0));
-                    nIntTwo = parseInt(nInt.charAt(1));
+                    nString = nInt.toString();
+                    nIntOne = parseInt(nString.charAt(0));
+                    nIntTwo = parseInt(nString.charAt(1));
                     nInt = nIntOne + nIntTwo;
                 }
             }
