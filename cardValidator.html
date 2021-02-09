@@ -29,7 +29,7 @@
             var nString = number.charAt(i);
             var nInt = parseInt(nString);
 
-            if (subtract % 2 != 0) {
+            if (subtract % 2 == 1) {
                 nInt = nInt * 2;
             }
             
@@ -45,7 +45,6 @@
             alert(number + " " + cardTotal + " is not a valid card number. Card denied.")
             return false;
         }
-
     }
 </script>
 
