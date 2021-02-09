@@ -3,6 +3,9 @@
 <script>
     function validateCard() {
         var x = document.forms["cardForm"]["cardNumber"].value;
+        if (isNan(x)) {
+            alert("You must enter a credit card number.");
+        }
         if (x.length < 13) {
             alert("Card number must be at least 13 digits.");
             return false;
