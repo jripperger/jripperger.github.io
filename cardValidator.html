@@ -5,11 +5,14 @@
         var x = document.forms["cardForm"]["cardNumber"].value;
         if (isNan(x)) {
             alert("You must enter a credit card number.");
+            return false;
         }
+
         if (x.length < 13) {
             alert("Card number must be at least 13 digits.");
             return false;
         }
+
         if (x.length > 16) {
             alert("Card nymber must be shorter than 16 digits.");
             return false;
