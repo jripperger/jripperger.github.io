@@ -1,0 +1,20 @@
+<h1>Credit Card Validator</h1>
+
+<script>
+    function validateCard() {
+        var x = document.forms["cardForm"]["cardNumber"].value;
+        if (x.length < 13) {
+            alert("Card number must be at least 13 digits.");
+            return false;
+        }
+        if (x.length > 16) {
+            alert("Card nymber must be shorter than 16 digits.");
+            return false;
+        }
+    }
+</script>
+
+<form name = "cardForm" onsubmit = "return validateCard()">
+    Credit Card Number: <input type = "text" name = "cardNumber">
+    <input type = "submit" value = "Submit">
+</form>
