@@ -2,21 +2,48 @@
 
 <script>
     function validateCard() {
-        var x = document.forms["cardForm"]["cardNumber"].value;
-        if (isNaN(x)) {
+        var number = document.forms["cardForm"]["cardNumber"].value;
+
+        // First set of checks, string length validation
+        if (isNaN(number)) {
             alert("Credit card number must be numbers only.");
             return false;
         }
 
-        if (x.length < 13) {
+        if (number.length < 13) {
             alert("Card number must be at least 13 digits.");
             return false;
         }
 
-        if (x.length > 16) {
+        if (number.length > 16) {
             alert("Card number must be shorter than 16 digits.");
             return false;
         }
+
+        // Second set of checks, actual number validation
+        var cardTotal = 0;
+        var i = number.length - 1;
+        var subtract = 0;
+
+        while (i > 0) {
+            var nString = number.charAt(i);
+            var nInt = parseInt(nString);
+
+            if (subtract % 2 != 0) {
+                nInt = 2*nInt;
+            }
+            
+            cardTotal = cardTotal + nInt;
+            i--;
+            subtract++;
+        }
+
+        if (cardTotal % 10 == 0) {
+            alert(number + " is a valid card number. Card accepted.");
+            document.getElementsByName("cardForm").reset();
+            return true;
+        }
+
     }
 </script>
 
