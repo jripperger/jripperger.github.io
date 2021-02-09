@@ -3,8 +3,8 @@
 <script>
     function validateCard() {
         var x = document.forms["cardForm"]["cardNumber"].value;
-        if (isNan(x)) {
-            alert("You must enter a credit card number.");
+        if (isNaN(x)) {
+            alert("Credit card number must be numbers only.");
             return false;
         }
 
@@ -14,7 +14,7 @@
         }
 
         if (x.length > 16) {
-            alert("Card nymber must be shorter than 16 digits.");
+            alert("Card number must be shorter than 16 digits.");
             return false;
         }
     }
