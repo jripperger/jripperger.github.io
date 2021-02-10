@@ -46,6 +46,7 @@
 
         if (cardTotal % 10 == 0) {
             alert(number + " is a valid card number. Card accepted.");
+            document.getElementsByName("cardForm").reset();
             return true;
         } else {
             alert(number + " is not a valid card number. Card denied.");
