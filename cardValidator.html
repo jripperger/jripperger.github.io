@@ -24,12 +24,12 @@
         var cardTotal = 0;
         var i = number.length - 1;
         var subtract = 0;
-
+  
         while (i >= 0) {
             var nString = number.charAt(i);
             var nInt = parseInt(nString);
-
-            if (subtract % 2 == 1) {
+  
+            if (subtract % 2 == 1) {     
                 nInt = nInt * 2;
                 if (nInt >= 10) {
                     nString = nInt.toString();
@@ -38,15 +38,14 @@
                     nInt = nIntOne + nIntTwo;
                 }
             }
-            
+              
             cardTotal = cardTotal + nInt;
             i--;
             subtract++;
         }
-
+  
         if (cardTotal % 10 == 0) {
             alert(number + " is a valid card number. Card accepted.");
-            document.getElementsByName("cardForm").reset();
             return true;
         } else {
             alert(number + " is not a valid card number. Card denied.");
